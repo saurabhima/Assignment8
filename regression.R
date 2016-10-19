@@ -1,4 +1,4 @@
-library(ggplot2)
+#library(ggplot2)
 movie_data = read.csv("movie_metadata.csv",head=TRUE,sep=",")
 nums <- sapply(movie_data, is.numeric)
 movie_data_nums<- movie_data[,nums]
@@ -34,7 +34,7 @@ calculate_rmse<-function()
   return(rmse)
 }
 movie_data_nums_test$predict_score<-train_regression()
-qplot(movie_data_nums_test$imdb_score,movie_data_nums_test$predict_score,geom = c("point", "smooth"))
+#qplot(movie_data_nums_test$imdb_score,movie_data_nums_test$predict_score,geom = c("point", "smooth"))
 rmse_val<-calculate_rmse()
 print("Calculated RMSE")
 print(rmse_val)
